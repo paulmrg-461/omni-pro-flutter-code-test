@@ -12,6 +12,9 @@ class HomeScreen extends StatelessWidget {
     final PhotoProvider photoProvider = context.watch<PhotoProvider>();
 
     return Scaffold(
+        appBar: AppBar(
+          title: const Text('omni.pro'),
+        ),
         body: photoProvider.initialLoading
             ? const Center(child: CircularProgressIndicator.adaptive())
             : NotificationListener<ScrollNotification>(

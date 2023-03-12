@@ -5,35 +5,37 @@ class CustomPhotoCard extends StatelessWidget {
   final String photoUrl;
   final int id;
   final double? width;
-  final double? height;
 
-  const CustomPhotoCard(
-      {super.key,
-      required this.id,
-      required this.title,
-      required this.photoUrl,
-      this.width = double.infinity,
-      this.height = 300});
+  const CustomPhotoCard({
+    super.key,
+    required this.id,
+    required this.title,
+    required this.photoUrl,
+    this.width = double.infinity,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: width,
-      // height: height,
-      decoration: BoxDecoration(border: Border.all(color: Colors.white)),
+      margin: const EdgeInsets.symmetric(horizontal: 22, vertical: 12),
+      decoration:
+          BoxDecoration(border: Border.all(color: Colors.white, width: 2)),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
               width: width,
-              // height: 220,
               child: FadeInImage.assetNetwork(
                   fit: BoxFit.cover,
                   placeholder: 'assets/images/loading.gif',
                   image: photoUrl)),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 22, horizontal: 16),
+            padding: const EdgeInsets.all(14),
             child: Text(
               '$id. $title',
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
             ),
           )
