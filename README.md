@@ -1,9 +1,6 @@
 # Omni.pro Flutter Code Test 
 ## _Flutter check_
 Please check if you have Flutter Framework installed.
-- pip install pandas
-- pip install code128
-- pip install pillow
 
 ## _Install Flutter project dependencies_
 On the project path, please type in the terminal the following command:
