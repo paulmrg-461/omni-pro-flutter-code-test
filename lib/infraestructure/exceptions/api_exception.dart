@@ -1,8 +1,8 @@
 class ApiException implements Exception {
-  final int statusCode;
+  final int? statusCode;
   final String message;
 
-  ApiException({required this.statusCode, required this.message});
+  ApiException({this.statusCode = 504, required this.message});
 
   @override
   String toString() {

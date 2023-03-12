@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:http/http.dart' as http;
 import 'package:omnipro_flutter_code_test/domain/datasources/photo_datasource.dart';
@@ -12,18 +14,26 @@ class JsonplaceholderPhotoDatasource implements PhotoDatasource {
 
   @override
   Future<List<Photo>> getPhotosByPage(int page) async {
-    final response = await http
-        .get(Uri.parse('$_baseUrl/photos?_page=$page&_limit=$_perPage'));
+    try {
+      final http.Response response = await http
+          .get(Uri.parse('$_baseUrl/photos?_page=$page&_limit=$_perPage'));
 
-    if (response.statusCode == 200) {
-      final data = json.decode(response.body) as List;
-      return data
-          .map((photo) => JsonplaceholderPhotoModel.fromJson(photo))
-          .toList();
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body) as List;
+        return data
+            .map((photo) => JsonplaceholderPhotoModel.fromJson(photo))
+            .toList();
+      }
+
+      throw ApiException(
+          statusCode: response.statusCode,
+          message: 'Error to load REST API data: ${response.reasonPhrase}');
+    } on TimeoutException catch (e) {
+      throw ApiException(message: 'Error connection timeout: ${e.message}');
+    } on SocketException catch (e) {
+      throw ApiException(message: 'Socket error: ${e.message}');
+    } on Error catch (e) {
+      throw ApiException(message: 'General error: $e');
     }
-
-    throw ApiException(
-        statusCode: response.statusCode,
-        message: 'Error to load REST API data: ${response.reasonPhrase}');
   }
 }
