@@ -10,15 +10,14 @@ String jsonplaceholderPhotoModelToJson(JsonplaceholderPhotoModel data) =>
 
 class JsonplaceholderPhotoModel extends Photo {
   final int albumId;
-  final String thumbnailUrl;
 
   JsonplaceholderPhotoModel({
     required int id,
     required String title,
     required String url,
+    required String thumbnailUrl,
     required this.albumId,
-    required this.thumbnailUrl,
-  }) : super(id: id, title: title, url: url);
+  }) : super(id: id, title: title, url: url, thumbnailUrl: thumbnailUrl);
 
   factory JsonplaceholderPhotoModel.fromJson(Map<String, dynamic> json) =>
       JsonplaceholderPhotoModel(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:omnipro_flutter_code_test/presentation/widgets/shared/error_view.dart';
 import 'package:omnipro_flutter_code_test/presentation/widgets/shared/photo_view.dart';
 import 'package:provider/provider.dart';
 import 'package:omnipro_flutter_code_test/presentation/providers/photo_provider.dart';
@@ -21,6 +22,8 @@ class HomeScreen extends StatelessWidget {
                   }
                   return true;
                 },
-                child: PhotoView(photos: photoProvider.photos)));
+                child: (photoProvider.errorMessage == '')
+                    ? PhotoView(photos: photoProvider.photos)
+                    : ErrorView(errorMessage: photoProvider.errorMessage)));
   }
 }

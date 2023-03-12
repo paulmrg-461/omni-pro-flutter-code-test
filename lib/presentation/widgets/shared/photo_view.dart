@@ -14,7 +14,7 @@ class PhotoView extends StatelessWidget {
         final Photo photo = photos[index];
 
         return CustomPhotoCard(
-            id: photo.id, title: photo.title, url: photo.url);
+            id: photo.id, title: photo.title, photoUrl: photo.thumbnailUrl);
       },
     );
   }

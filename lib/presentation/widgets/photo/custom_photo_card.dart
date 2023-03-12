@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CustomPhotoCard extends StatelessWidget {
   final String title;
-  final String url;
+  final String photoUrl;
   final int id;
   final double? width;
   final double? height;
@@ -11,7 +11,7 @@ class CustomPhotoCard extends StatelessWidget {
       {super.key,
       required this.id,
       required this.title,
-      required this.url,
+      required this.photoUrl,
       this.width = double.infinity,
       this.height = 300});
 
@@ -25,16 +25,16 @@ class CustomPhotoCard extends StatelessWidget {
         children: [
           SizedBox(
               width: width,
-              height: 220,
-              child: Image(fit: BoxFit.cover, image: NetworkImage(url))),
+              // height: 220,
+              child: FadeInImage.assetNetwork(
+                  fit: BoxFit.cover,
+                  placeholder: 'assets/images/loading.gif',
+                  image: photoUrl)),
           Padding(
-            padding: const EdgeInsets.all(22.0),
+            padding: const EdgeInsets.symmetric(vertical: 22, horizontal: 16),
             child: Text(
               '$id. $title',
-              style: const TextStyle(
-                  // color: Colors.white,
-                  fontSize: 22,
-                  fontWeight: FontWeight.w400),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
             ),
           )
         ],
