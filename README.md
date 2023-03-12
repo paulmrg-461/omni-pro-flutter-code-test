@@ -1,16 +1,39 @@
-# omnipro_flutter_code_test
+# Omni.pro Flutter Code Test 
+## _Flutter check_
+Please check if you have Flutter Framework installed.
+- pip install pandas
+- pip install code128
+- pip install pillow
 
-A new Flutter project.
+## _Install Flutter project dependencies_
+On the project path, please type in the terminal the following command:
+```
+$ flutter pub get
+Got dependencies!
+```
 
-## Getting Started
+## _Flutter run on device_
+On the project path, please type in the terminal the following command:
+```
+$ flutter run
+Multiple devices found:
+```
+If you have multiple devices please type in the terminal the device number to run the app.
+```
+$ 1
+💪 Running with sound null safety 💪
+```
 
-This project is a starting point for a Flutter application.
+## _Considerations_
+This Flutter project is optimized to run on Android and iOS devices.
 
-A few resources to get you started if this is your first Flutter project:
+## _Mobile Screenshots_
+<a href="https://drive.google.com/uc?export=view&id=1YanNVE0y3WzRiz6pCs8dO_hmldCl7Odk"><img src="https://drive.google.com/uc?export=view&id=1YanNVE0y3WzRiz6pCs8dO_hmldCl7Odk" style="width: 450px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<a href="https://drive.google.com/uc?export=view&id=1fof_CEi4g0XQRtdG3VrsXKOTG41AW0Pq"><img src="https://drive.google.com/uc?export=view&id=1fof_CEi4g0XQRtdG3VrsXKOTG41AW0Pq" style="width: 450px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<a href="https://drive.google.com/uc?export=view&id=1fof_CEi4g0XQRtdG3VrsXKOTG41AW0Pq"><img src="https://drive.google.com/uc?export=view&id=1fof_CEi4g0XQRtdG3VrsXKOTG41AW0Pq" style="width: 450px; max-width: 100%; height: auto" title="Click to enlarge picture" />
+
+Developed by: 
+Paul Realpe
+Email: co.devpaul@gmail.com
